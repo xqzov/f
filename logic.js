@@ -90,7 +90,7 @@ if (loginForm) {
 
         if (u === "user" && p === "password") {
             // !!! ДАЕМ 100 000 БАЛЛОВ ДЛЯ ТЕСТА ПОКУПКИ !!!
-            loginUser("User", 100000);
+            loginUser("User", 5000);
             authModal.style.display = "none";
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
