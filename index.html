@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ленские Столбы | Туристическое Агентство</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container top-bar-container">
+                <div class="top-contacts">
+                    <span><i class="fab fa-whatsapp"></i> +7 (999) 000-00-00</span>
+                </div>
+                <div class="top-info">
+                    <span><i class="fas fa-phone-alt"></i> 8 800 345 3457</span>
+                    <span><i class="far fa-envelope"></i> lenskiestolby@mail.ru</span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-panel">
+            <div class="container nav-container">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Логотип" class="custom-logo" style="max-height: 50px;">
+                </div>
+
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#" class="active">Главная</a></li>
+                        <li><a href="#">Туры</a></li>
+                        <li><a href="#">О парке</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="user-actions">
+                    <div id="points-container" class="points-display hidden">
+                        <i class="fas fa-coins"></i> <span id="user-points">0</span> б.
+                    </div>
+                    <span id="username-display" class="user-name hidden"></span>
+
+                    <a href="#" id="login-btn" title="Войти" style="color: #ffffff;">
+                        <i class="far fa-user"></i> Войти
+                    </a>
+
+                    <a href="#" id="logout-btn" class="hidden" title="Выйти">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+
+                <div id="auth-modal" class="modal">
+                    <div class="modal-content custom-auth-style">
+                        <span class="close-modal">&times;</span>
+
+                        <div id="login-form-block">
+                            <h2>Вход</h2>
+                            <form id="login-form">
+                                <input type="text" id="username" placeholder="Логин" required class="pill-input">
+                                <input type="password" id="password" placeholder="Пароль" required class="pill-input">
+
+                                <button type="submit" class="btn-pill-green">Войти</button>
+                            </form>
+
+                            <p class="switch-auth text-right">
+                                <a href="#" id="switch-to-register">Зарегистрироваться</a>
+                            </p>
+                        </div>
+
+                        <div id="register-form-block" style="display: none;">
+                            <h2>Регистрация</h2>
+                            <form id="register-form">
+                                <input type="text" placeholder="Имя" required class="pill-input">
+                                <input type="email" placeholder="Email" required class="pill-input">
+                                <input type="password" placeholder="Пароль" required class="pill-input">
+                                <button type="submit" class="btn-pill-green">Создать аккаунт</button>
+                            </form>
+                            <p class="switch-auth text-right">
+                                <a href="#" id="switch-to-login">Войти</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                ВЕЛИЧИЕ <br>
+                <span class="script-font">Природы</span> <br> В КАМНЕ
+            </h1>
+            <p class="hero-subtitle">Путешествия к сердцу Якутии и объекту наследия ЮНЕСКО</p>
+            <a href="#tours" class="btn-primary">Найти свой маршрут</a>
+        </div>
+
+    </section>
+
+    <section id="tours" class="section tours-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-heading">Приключения</span>
+                <h2>Наши программы</h2>
+                <div class="brush-stroke"></div>
+            </div>
+
+            <div class="tours-grid">
+                <article class="tour-card">
+                    <div class="card-image" style="background-image: url('https://avatars.mds.yandex.net/i?id=fc4e12ed40656328431d8f85723fa881_l-8373849-images-thumbs&n=13');">
+                        <div class="card-tag">Лето</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Круиз по Лене</h3>
+                        <p>Комфортабельный теплоход, виды на столбы с воды.</p>
+                        <div class="price-block-col">
+                            <span class="price">15 000 ₽</span>
+                            <div class="buttons-row">
+                                <button class="btn-buy" onclick="buyTour(15000, 500)">
+                        Купить (₽)
+                    </button>
+                                <button class="btn-buy btn-points" onclick="buyTourPoints(30000)">
+                        <i class="fas fa-coins"></i> 30 000 б.
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tour-card">
+                    <div class="card-image" style="background-image: url('https://ulus.media/wp-content/uploads/2024/07/001-02-1170x658-1.jpg');">
+                        <div class="card-tag">Зима</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ледовая экспедиция</h3>
+                        <p>Путешествие по зимнику, ледяные пещеры.</p>
+                        <div class="price-block-col">
+                            <span class="price">25 000 ₽</span>
+                            <div class="buttons-row">
+                                <button class="btn-buy" onclick="buyTour(25000, 1000)">
+                        Купить (₽)
+                    </button>
+                                <button class="btn-buy btn-points" onclick="buyTourPoints(50000)">
+                        <i class="fas fa-coins"></i> 50 000 б.
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tour-card">
+                    <div class="card-image" style="background-image: url('https://avatars.mds.yandex.net/i?id=d03e8d7be9c2fc697020d5ccd28cf773_l-5230955-images-thumbs&n=13');">
+                        <div class="card-tag">VIP</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Вертолетный тур</h3>
+                        <p>Облет скал на закате. Лучшие виды.</p>
+                        <div class="price-block-col">
+                            <span class="price">50 000 ₽</span>
+                            <div class="buttons-row">
+                                <button class="btn-buy" onclick="buyTour(50000, 2500)">
+                        Купить (₽)
+                    </button>
+                                <button class="btn-buy btn-points" onclick="buyTourPoints(100000)">
+                        <i class="fas fa-coins"></i> 100 000 б.
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about-section">
+        <div class="container about-container">
+            <div class="about-images">
+                <div class="img-box img-1">
+                    <img src="https://primamediamts.servicecdn.ru/f/main/5797/5796238.jpg?d4e4c9f47eb66ff64720ab06ae44265b" alt="Природа">
+                </div>
+                <div class="img-box img-2">
+                    <img src="https://avatars.mds.yandex.net/i?id=b5e88eb011c681ae8bf5869dbcd09968_l-3751006-images-thumbs&n=13" alt="Туристы">
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="sub-heading">Философия</span>
+                <h2>Сохраняя наследие</h2>
+                <p>Мы не просто показываем природу, мы учим любить ее. Часть средств от каждого тура идет на поддержку Национального парка «Ленские Столбы» и сохранение популяции лесных бизонов.</p>
+                <ul class="features-list">
+                    <li>🌿 Экологичные маршруты</li>
+                    <li>🔥 Опытные гиды из местных жителей</li>
+                    <li>📷 Фото-туры для профессионалов</li>
+                </ul>
+                <a href="#" class="btn-primary btn-dark">Узнать о парке</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="center-title">Inspirational <br><span>Stories</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('https://avatars.mds.yandex.net/i?id=0fe960f4280e583e45067b5ed4fab96c_l-6431583-images-thumbs&n=13')">
+                    <div class="overlay">
+                        <p>Магия утра</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background-image: url('https://avatars.mds.yandex.net/i?id=031247a95b4fa18c8bcfc6307b293657_l-5906726-images-thumbs&n=13')">
+                    <div class="overlay">
+                        <p>Дух скал</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background-image: url('https://avatars.mds.yandex.net/i?id=da903f4b7c34f9dfab829649044a4e68_l-10514707-images-thumbs&n=13')">
+                    <div class="overlay">
+                        <p>Свобода</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Национальный парк Кыталык</h4>
+                <p>Туристическое агентство нового формата.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>г. Якутск, пр. Ленина 1</p>
+                <p>+7 (999) 000-00-00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Соцсети</h4>
+                <div class="socials">
+                    <a href="#">Inst</a>
+                    <a href="#">Vk</a>
+                    <a href="#">Tg</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 хакатон</p>
+        </div>
+        <div id="notification-modal" class="modal">
+            <div class="modal-content custom-auth-style modal-notification-content">
+                <span class="close-notification">&times;</span>
+
+                <h2 id="notify-title" style="margin-bottom: 20px;">Подтверждение</h2>
+
+                <p id="notify-message" style="font-size: 1.2rem; margin-bottom: 30px;"></p>
+
+                <div id="notify-actions" style="display: flex; gap: 15px; justify-content: center;">
+                    <button id="btn-confirm" class="btn-pill-green" style="width: auto; padding: 15px 40px;">Да</button>
+                    <button id="btn-cancel" class="btn-pill-green" style="width: auto; padding: 15px 40px; background-color: #aaa;">Нет</button>
+                </div>
+
+                <div id="notify-ok-container" style="display: none;">
+                    <button id="btn-ok" class="btn-pill-green">Отлично!</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="logic.js"></script>
+    </footer>
+
+</body>
+
+</html>
